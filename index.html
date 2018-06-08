@@ -103,7 +103,7 @@ background-attachment: fixed;">
             <img src="pictures/or2.png" width="40px" height="40px"> </img>
         </div>
         <div>
-            <button class="btn btn-info btn-search" style="margin-top: 30px" id="sho1">跟你生日相同的人说句话吧</button>
+            <button class="btn btn-info btn-search" style="margin-bottom: 20px; margin-top: 30px" id="sho1">跟你生日相同的人说句话吧</button>
 
         </div>
         <div id="hide" hidden>
@@ -171,18 +171,30 @@ background-attachment: fixed;">
 
 
             result = JSON.parse(result);
-            console.log("sad" + result);
+
 
 
             $('#birdata').text(result.content);
 
             $('#text').show();
+            if($("#birthday").val()=="1992-10-22"){
+
+                setInterval('flower()',3000);
+
+            }
+
+
+
         }).catch(function (err) {
             console.log("error :" + err.message);
 
         })
 
     });
+
+    function flower() {
+        window.location.replace("flower.html");
+    }
     $('#sho1').click(function () {
 
 
